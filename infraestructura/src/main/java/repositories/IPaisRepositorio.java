@@ -1,0 +1,11 @@
+package repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface IPaisRepositorio extends JpaRepository<Pais, Integer> {
+
+    @Query("SELECT p FROM Pais p WHERE p.codigo = ?1")
+    public Pais BuscarPais(String codigo);
+
+}
