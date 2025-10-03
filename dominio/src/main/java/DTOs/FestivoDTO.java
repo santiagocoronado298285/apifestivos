@@ -1,4 +1,4 @@
-package festivos.api.DTOs;
+package DTOs;
 
 public class FestivoDTO {
     private String nombre;

@@ -1,5 +1,5 @@
 package repositories;
-
+import entities.Festivo;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
