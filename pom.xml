@@ -21,6 +21,7 @@
         <module>infraestructura</module>
         <module>api</module>
         <module>core</module>
+        <module>aplicacion</module>
     </modules>
 
     <properties>

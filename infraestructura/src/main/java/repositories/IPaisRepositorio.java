@@ -1,14 +1,17 @@
 package repositories;
 
-import entities.Pais;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import entities.Pais;
 
 @Repository
 public interface IPaisRepositorio extends JpaRepository<Pais, Integer> {
 
     @Query("SELECT p FROM Pais p WHERE p.codigo = ?1")
-    public Pais BuscarPais(String codigo);
+    public List<Pais> BuscarPais(int codigo);
 
 }

@@ -1,6 +1,7 @@
 package services;
-import entities.TipoFestivo;
 import java.util.List;
+
+import entities.TipoFestivo;
 
 public interface ITipoFestivoService {
 
