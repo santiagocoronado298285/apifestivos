@@ -5,16 +5,14 @@ public class FestivoDTO {
     private int dia;
     private int mes;
     private String pais;
-    private String tipoDescripcion;
 
     public FestivoDTO() {}
 
-    public FestivoDTO(String nombre, int dia, int mes, String pais, String tipoDescripcion) {
+    public FestivoDTO(String nombre, int dia, int mes, String pais) {
         this.nombre = nombre;
         this.dia = dia;
         this.mes = mes;
         this.pais = pais;
-        this.tipoDescripcion = tipoDescripcion;
     }
 
     public String getNombre() {
@@ -49,11 +47,5 @@ public class FestivoDTO {
         this.pais = pais;
     }
 
-    public String getTipoDescripcion() {
-        return tipoDescripcion;
-    }
 
-    public void setTipoDescripcion(String tipoDescripcion) {
-        this.tipoDescripcion = tipoDescripcion;
-    }
 }

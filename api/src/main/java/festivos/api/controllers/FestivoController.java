@@ -1,9 +1,14 @@
 package festivos.api.controllers;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import DTOs.FestivoDTO;
+import entities.Festivo;
 import services.FestivoService;
 
 
@@ -18,7 +23,10 @@ private FestivoService festivoService;
     }
 
     @GetMapping("/ListarFestivos")
-    public String listarFestivos() {
-        return "Lista de festivos";
+    public List<FestivoDTO> listarFestivos() {
+        List<Festivo> festivos = festivoService.obtenerFestivos();
+        return festivos.stream()
+                .map(festivo -> new FestivoDTO(festivo.getNombre(), festivo.getDia(), festivo.getMes(), festivo.getPais().getNombre()))
+                .collect(Collectors.toList());
     }
 }
