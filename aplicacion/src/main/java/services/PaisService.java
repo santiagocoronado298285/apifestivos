@@ -3,7 +3,7 @@ package services;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import entities.Pais;
 import repositories.IPaisRepositorio;
 
@@ -12,7 +12,7 @@ public class PaisService implements IPaisService {
 
     private IPaisRepositorio repositorio;
 
-    @Autowired
+   
     public PaisService(IPaisRepositorio repositorio) {
         this.repositorio = repositorio;
     }
@@ -24,6 +24,7 @@ public class PaisService implements IPaisService {
 
     @Override
     public Pais agregarPais(Pais pais) {
+        pais.setId(0);
         return repositorio.save(pais);
     }
 

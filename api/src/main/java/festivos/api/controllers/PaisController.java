@@ -1,22 +1,20 @@
 package festivos.api.controllers;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import services.IPaisService;
+import services.PaisService;
 import entities.Pais;
 
 @RestController
 @RequestMapping("/api/pais")
 public class PaisController {
 
-    private IPaisService paisService;
+    private PaisService paisService;
 
-    public PaisController(IPaisService paisService) {
+    public PaisController(PaisService paisService) {
         this.paisService = paisService;
     }
 
@@ -26,6 +24,11 @@ public class PaisController {
         return paises.stream()
         .map(pais -> new Pais(pais.getId(), pais.getNombre()))
         .collect(Collectors.toList());
+    }
+
+    @PostMapping("/agregarpais")
+    public Pais agregarPais(@RequestBody Pais pais) {
+        return paisService.agregarPais(pais);
     }
 
 

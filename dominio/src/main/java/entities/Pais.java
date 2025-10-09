@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,8 +14,9 @@ public class Pais {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "secuencia_pais")
+    @SequenceGenerator(name = "secuencia_pais", sequenceName = "secuencia_pais", allocationSize = 1)
+    private Integer id;
 
     @Column(name = "nombre", length = 100, unique = true)
     private String nombre;
@@ -22,7 +24,7 @@ public class Pais {
     public Pais() {
     }
 
-    public Pais(int id, String nombre) {
+    public Pais(Integer id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
