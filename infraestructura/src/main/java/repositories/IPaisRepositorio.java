@@ -11,7 +11,7 @@ import entities.Pais;
 @Repository
 public interface IPaisRepositorio extends JpaRepository<Pais, Integer> {
 
-    @Query("SELECT p FROM Pais p WHERE p.codigo = ?1")
-    public List<Pais> BuscarPais(int codigo);
+    @Query("SELECT p FROM Pais p WHERE p.id = ?1")
+    public List<Pais> BuscarPais(int id);
 
 }

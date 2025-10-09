@@ -1,15 +1,15 @@
 package repositories;
 
-import entities.TipoFestivo;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import entities.TipoFestivo;
+
 @Repository
 public interface ITipoFestivoRepositorio extends JpaRepository<TipoFestivo, Integer> {
 
-    @Query("SELECT t FROM TipoFestivo t WHERE t.nombre = ?1")
-    public TipoFestivo BuscarTipoFestivo(String nombre);
+    @Query("SELECT t FROM TipoFestivo t WHERE t.tipo = ?1")
+    public TipoFestivo BuscarTipoFestivo(String tipo);
 
 }

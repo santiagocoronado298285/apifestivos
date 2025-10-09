@@ -1,16 +1,17 @@
 package festivos.api.controllers;
 
-import services.FestivoService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import services.FestivoService;
 
 
 @RestController
 @RequestMapping("/api/festivos")
 public class FestivoController {
 
-private final FestivoService festivoService;
+private FestivoService festivoService;
 
     public FestivoController(FestivoService festivoService) {
         this.festivoService = festivoService;
