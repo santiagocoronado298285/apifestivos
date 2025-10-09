@@ -8,6 +8,6 @@ public interface IFestivoService {
     public List<Festivo> obtenerFestivos();
     public Festivo agregarFestivo(Festivo festivo);
     public void eliminarFestivo(int id);
-    public Festivo actualizarFestivo(int id, Festivo festivo);
-    public Festivo obtenerFestivoPorId(int id);
+    public Festivo actualizarFestivo(Festivo festivo);
+    public Festivo obtenerFestivoPorPais(int id);
 }
