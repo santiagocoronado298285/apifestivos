@@ -22,7 +22,7 @@ private FestivoService festivoService;
         this.festivoService = festivoService;
     }
 
-    @GetMapping("/ListarFestivos")
+    @GetMapping("/listarfestivos")
     public List<FestivoDTO> listarFestivos() {
         List<Festivo> festivos = festivoService.obtenerFestivos();
         return festivos.stream()
