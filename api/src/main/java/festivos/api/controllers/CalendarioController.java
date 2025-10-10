@@ -33,7 +33,7 @@ public class CalendarioController {
 
 
     }
-    @PostMapping("/caldomingopascua")
+    @PostMapping("/festivospaisanio")
     public List<FestivosPais> festivospaisanio(@RequestParam int anio, @RequestParam int  pais) {
 
         List<Festivo> festivos = festivoService.festivosPorPais(pais);
