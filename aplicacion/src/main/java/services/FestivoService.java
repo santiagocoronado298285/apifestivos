@@ -38,9 +38,8 @@ public class FestivoService implements IFestivoService {
     }
 
     @Override
-    public Festivo obtenerFestivoPorPais(int id) {
-        List<Festivo> festivos = repositorio.FestivosPorPais(id);
-        return festivos.isEmpty() ? null : festivos.get(0);
+    public List<Festivo> festivosPorPais(int id) {
+        return repositorio.FestivosPorPais(id);
     }
 
 

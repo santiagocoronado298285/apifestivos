@@ -24,7 +24,7 @@ private FestivoService festivoService;
     public List<FestivoDTO> listarFestivos() {
         List<Festivo> festivos = festivoService.obtenerFestivos();
         return festivos.stream()
-                .map(festivo -> new FestivoDTO(festivo.getNombre(), festivo.getDia(), festivo.getMes(), festivo.getPais().getNombre()))
+                .map(festivo -> new FestivoDTO(festivo.getNombre(), festivo.getDia(), festivo.getMes(), festivo.getPais().getNombre(), festivo.getTipoFestivo().getTipo()))
                 .collect(Collectors.toList());
     }
 }
