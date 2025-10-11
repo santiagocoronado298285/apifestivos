@@ -3,7 +3,7 @@ package services;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import entities.Festivo;
 import repositories.IFestivoRepositorio;
 
@@ -27,10 +27,13 @@ public class FestivoService implements IFestivoService {
     }
 
     @Override
-    public void eliminarFestivo(int id) {
-        repositorio.deleteById(id);
+    public boolean eliminarFestivo(int id) {
+        if (repositorio.existsById(id)) {
+            repositorio.deleteById(id);
+            return !repositorio.existsById(id); 
+        }
+        return false;
     }
-    
 
     @Override
     public Festivo actualizarFestivo(Festivo festivo) {
@@ -41,6 +44,5 @@ public class FestivoService implements IFestivoService {
     public List<Festivo> festivosPorPais(int id) {
         return repositorio.FestivosPorPais(id);
     }
-
 
 }

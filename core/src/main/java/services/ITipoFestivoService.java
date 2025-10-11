@@ -9,5 +9,5 @@ public interface ITipoFestivoService {
     public TipoFestivo agregarTipoFestivo(TipoFestivo tipoFestivo);
     public void eliminarTipoFestivo(int id);
     public TipoFestivo actualizarTipoFestivo(TipoFestivo tipoFestivo);
-    public TipoFestivo obtenerTipoFestivoPorNombre(String nombre);
+    public TipoFestivo obtenerTipoFestivo(int id);
 }

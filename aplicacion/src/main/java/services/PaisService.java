@@ -29,7 +29,6 @@ public class PaisService implements IPaisService {
                 return null;
             }
         } catch (Exception e) {
-            // Manejo de la excepción si es necesario
         }
         pais.setId(0);
         return repositorio.save(pais);

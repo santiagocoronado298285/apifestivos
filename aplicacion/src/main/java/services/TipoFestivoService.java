@@ -1,7 +1,9 @@
 package services;
 
 import java.util.List;
+
 import org.springframework.stereotype.Service;
+
 import entities.TipoFestivo;
 import repositories.ITipoFestivoRepositorio;
 
@@ -36,8 +38,8 @@ public class TipoFestivoService implements ITipoFestivoService {
     }
 
     @Override
-    public TipoFestivo obtenerTipoFestivoPorNombre(String nombre) {
-        return repositorio.BuscarTipoFestivo(nombre);
+    public TipoFestivo obtenerTipoFestivo(int id) {
+        return repositorio.BuscarTipoFestivo(id);
     }
 
 }
