@@ -45,4 +45,9 @@ public class FestivoService implements IFestivoService {
         return repositorio.FestivosPorPais(id);
     }
 
+    @Override
+    public Festivo festivoPorId(int id) {
+        return repositorio.findById(id).orElse(null);
+    }
+
 }

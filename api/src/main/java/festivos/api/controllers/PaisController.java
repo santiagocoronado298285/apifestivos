@@ -3,14 +3,12 @@ package festivos.api.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import entities.Pais;
 import services.PaisService;
+
+
 
 @RestController
 @RequestMapping("/api/pais")
@@ -44,5 +42,15 @@ public class PaisController {
         return paisService.agregarPais(pais);
     }
 
+    @PostMapping("/eliminarpais/{id}")
+    public boolean eliminarPais(@PathVariable int id) {
+        return paisService.eliminarPais(id);
+    }
 
+    @PutMapping("actualizarpais/{id}")
+    public Pais actualizarpais(@PathVariable int id, @RequestBody Pais pais) {
+        Pais paisudate = paisService.obtenerPaisPorId(id);
+        paisudate.setNombre(pais.getNombre());
+        return paisService.actualizarPais(paisudate);
+    }
 }

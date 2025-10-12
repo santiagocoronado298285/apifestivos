@@ -10,5 +10,6 @@ public interface IFestivoService {
     public boolean eliminarFestivo(int id);
     public Festivo actualizarFestivo(Festivo festivo);
     public List<Festivo> festivosPorPais(int id);
+    public Festivo festivoPorId(int id);
 
 }
